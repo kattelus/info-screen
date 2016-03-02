@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="css/info-screen.css" media="screen" />
+
+
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script src="https://www.google.com/jsapi"></script>
+<script src="https://www.youtube.com/player_api"></script>
+<script type="text/javascript" src="lib/ContentManager.js"></script>
+<script type="text/javascript" src="lib/IframeContent.js"></script>
+<script type="text/javascript" src="lib/ImageContent.js"></script>
+<script type="text/javascript" src="lib/FeedContent.js"></script>
+<script type="text/javascript" src="lib/JenkinsContent.js"></script>
+<script type="text/javascript" src="lib/BambooContent.js"></script>
+<script type="text/javascript" src="lib/SmokeMonsterContent.js"></script>
+<script type="text/javascript" src="lib/TwitterContent.js"></script>
+<script type="text/javascript" src="lib/YoutubeContent.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+
+		var cm = new ContentManager('contentDiv')
+		.add(new IframeContent('http://www.w3.org', { priority: 2, visibilityFunction: function() {return true}}))
+		//.add(new JenkinsContent('http://some.jenkins.com', { header: "Failed jobs", priority: 2, minimumShowTime: 1000 * 30 }))
+		//.add(new JenkinsContent('http://some.jenkins.com', { header: "All jobs", priority: 2, minimumShowTime: 1000 * 30, filterFunction: function(job) { return true } }))
+		//.add(new JenkinsContent('http://some.jenkins.com', { header: "Running jobs", priority: 2, minimumShowTime: 1000 * 30, filterFunction: function(job) { return /.*anime/.test(job.color) } }))		
+		.add(new ImageContent('https://static.pexels.com/photos/33227/sunrise-phu-quoc-island-ocean.jpg', { priority: 2 }))
+		.add(new YoutubeContent('http://www.youtube.com/embed/ODKAdOjx83Q', { priority: 2 }))
+		.add(new FeedContent('http://yle.fi/uutiset/rss/uutiset.rss',{ header: "Hesarin Rss syöte", priority: 2, minimumShowTime: 1000 * 30, maxAge: 60}))
+		.start();
+
+	});
+
+</script>
+</head>
+<body>
+	<div style="text-align: center;">This is example of one info screen on monitor</div>
+	<div style="width: 100%; height: 100%;" id="contentDiv"></div>
+</body>
+</html>

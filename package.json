@@ -1,0 +1,25 @@
+{
+  "name": "info-screen",
+  "version": "1.0.0",
+  "description": "Simple javascript library show some information as slideshow",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "gulp build",
+    "start": "gulp"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "coffee-loader": "^0.7.2",
+    "coffee-script": "^1.10.0",
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.7",
+    "jquery": "^2.2.1",
+    "path": "^0.12.7",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+  }
+}
